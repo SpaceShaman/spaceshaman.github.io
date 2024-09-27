@@ -5,6 +5,11 @@ useHead({
   },
   link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 });
+useSeoMeta({
+  title: "Krzysztof Stanisławski - Fullstack Developer",
+  description:
+    "Krzysztof Stanisławski - Fullstack Developer. I'm a fullstack developer with a passion for creating advanced web applications.",
+});
 </script>
 <template>
   <div class="mx-auto max-w-7xl p-4">
