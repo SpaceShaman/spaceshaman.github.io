@@ -1,7 +1,6 @@
 <template>
   <Card title="About Me">
-    I'm a full stack developer living in the milky way, I focus much more on the
-    backend because that's where the business rules are usually located. I love
+    I'm a full stack developer focused much more on the backend. I love
     designing IT systems based on
     <Url
       href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"
