@@ -14,7 +14,7 @@ const { isHovered } = toRefs(props);
       class="absolute transition-opacity duration-500"
     >
       <img
-        src="assets/avatar-0.png"
+        src="assets/avatar-0.jpg"
         alt="Avatar"
         class="h-40 w-40 rounded-full border-4 border-light-primary object-cover dark:border-dark-primary"
       />
@@ -27,7 +27,7 @@ const { isHovered } = toRefs(props);
       class="transition-opacity duration-500"
     >
       <img
-        src="assets/avatar-1.png"
+        src="assets/avatar-1.jpg"
         alt="Avatar"
         class="h-40 w-40 rounded-full border-4 border-light-primary object-cover dark:border-dark-primary"
       />
