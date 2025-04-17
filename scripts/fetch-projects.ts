@@ -1,12 +1,10 @@
+import { writeFile } from 'fs/promises'
+
 import * as cheerio from 'cheerio'
 
 export default async function getProjects(): Promise<Project[]> {
 	const profileUrl = 'https://github.com/SpaceShaman'
-	const response = await fetch(profileUrl, {
-		headers: {
-			'User-Agent': 'Mozilla/5.0 (compatible; StaticSite/1.0)',
-		},
-	})
+	const response = await fetch(profileUrl, {})
 	if (!response.ok) {
 		throw new Error(`Failed to fetch profile: ${response.statusText}`)
 	}
@@ -49,3 +47,15 @@ function extractPinnedProjects(html: string): Project[] {
 
 	return projects
 }
+
+async function main() {
+	const projects = await getProjects()
+	await writeFile(
+		'./src/public/projects.json',
+		JSON.stringify(projects, null, 2),
+		'utf-8'
+	)
+	console.log('Projects saved to public/projects.json')
+}
+
+main()

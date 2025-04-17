@@ -1,6 +1,5 @@
 <script setup lang="ts">
-	const projects = await getProjects()
-	console.log(projects)
+	import projects from '../public/projects.json'
 </script>
 <template>
 	<div v-for="(project, index) in projects" :key="index">
