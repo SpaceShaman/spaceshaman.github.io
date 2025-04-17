@@ -1,8 +1,9 @@
 <script setup lang="ts">
 	const projects = await getProjects()
+	console.log(projects)
 </script>
 <template>
-	<div v-for="project in projects" :key="project.name">
+	<div v-for="(project, index) in projects" :key="index">
 		<h2>
 			<a :href="project.url" target="_blank">
 				{{ project.name }}
@@ -10,16 +11,15 @@
 		</h2>
 		<p v-if="project.description">{{ project.description }}</p>
 		<div class="mt-1 flex">
-			<a
-				:href="project.url"
-				target="_blank"
-				class="mr-4 flex items-center gap-2 text-base-content"
-			>
-				<Icon name="mdi:language-python" size="1.5rem" />
+			<a target="_blank" class="mr-4 flex items-center gap-2 text-base-content">
+				<Icon
+					:name="`mdi:language-${project.language.toLowerCase()}`"
+					size="1.5rem"
+				/>
 				<span>{{ project.language }}</span>
 			</a>
 			<a
-				v-if="project.stars"
+				v-if="project.stars > 0"
 				:href="`${project.url}/stargazers`"
 				target="_blank"
 				class="mr-4 flex items-center gap-2 text-yellow-600"
@@ -28,7 +28,7 @@
 				<span>{{ project.stars }}</span>
 			</a>
 			<a
-				v-if="project.forks"
+				v-if="project.forks > 0"
 				:href="`${project.url}/forks`"
 				target="_blank"
 				class="flex items-center gap-2 text-blue-600"
