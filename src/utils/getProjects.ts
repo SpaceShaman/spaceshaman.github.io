@@ -1,5 +1,4 @@
 import * as cheerio from 'cheerio'
-import fetch from 'node-fetch'
 
 export default async function getProjects(): Promise<Project[]> {
 	const profileUrl = 'https://github.com/SpaceShaman'

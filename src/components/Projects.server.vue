@@ -1,10 +1,5 @@
 <script setup lang="ts">
-	let projects
-	if (import.meta.env.MODE === 'development') {
-		projects = getFakeProjects()
-	} else {
-		projects = await getProjects()
-	}
+	const projects = await getProjects()
 </script>
 <template>
 	<div v-for="project in projects" :key="project.name">
