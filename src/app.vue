@@ -14,7 +14,7 @@
 <template>
 	<ActionButtons />
 	<div>
-		<div class="mx-auto max-w-7xl p-4 print:p-1">
+		<div class="mx-auto max-w-7xl p-4 print:p-2">
 			<div class="flex space-x-4 print:space-x-2">
 				<LeftSection class="basis-1/3 print:basis-2/5" />
 				<RightSection class="basis-2/3 print:basis-3/5" />
@@ -25,14 +25,6 @@
 <style>
 	body {
 		@apply h-screen bg-base-200;
-	}
-	@media print {
-		@page {
-			size: A4;
-		}
-		body {
-			height: 29.7cm;
-		}
 	}
 	a {
 		@apply text-accent;

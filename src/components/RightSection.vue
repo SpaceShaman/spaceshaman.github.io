@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col gap-4">
+	<div class="flex flex-col gap-4 print:gap-2">
 		<Card title="About Me">
 			<Details />
 		</Card>
