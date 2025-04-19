@@ -4,7 +4,5 @@
 	}
 </script>
 <template>
-	<button class="btn btn-soft btn-circle" @click="printCV">
-		<Icon name="mdi:printer-outline" size="1.5rem" />
-	</button>
+	<ActionButton icon="mdi:printer-outline" @click="printCV" />
 </template>
