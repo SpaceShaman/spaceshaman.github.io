@@ -10,7 +10,7 @@
 			:url="project.url"
 			:description="project.description"
 		>
-			<div class="flex">
+			<div class="mt-1 flex">
 				<a
 					target="_blank"
 					class="mr-4 flex items-center gap-2 text-base-content"

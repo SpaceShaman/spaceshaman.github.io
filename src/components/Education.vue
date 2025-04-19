@@ -1,15 +1,15 @@
+<script setup lang="ts">
+	import educations from '../data/educations.json'
+</script>
 <template>
 	<Card title="Education">
-		<div>
-			<a
-				class="text-lg font-bold text-accent"
-				href="https://zsl.poznan.pl/"
-				target="_blank"
-			>
-				Electronics technician
-			</a>
-			<p>September 2012 - June 2015</p>
-			<p class="mt-1">Zespół Szkół Łączności in Poznań</p>
-		</div>
+		<CardItem
+			v-for="(education, index) in educations"
+			:key="index"
+			:title="education.title"
+			:subtitle="`${education.startDate} - ${education.endDate}`"
+			:url="education.url"
+			:description="education.institution"
+		/>
 	</Card>
 </template>
