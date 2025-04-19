@@ -13,15 +13,11 @@
 		</div>
 		<LeftSectionSkills />
 		<div class="mt-4 flex justify-center gap-4 text-accent">
-			<a href="https://github.com/SpaceShaman" target="_blank">
-				<Icon name="mdi:github" size="2rem" />
-			</a>
-			<a
-				href="https://www.linkedin.com/in/krzysztof-stanislawski/"
-				target="_blank"
-			>
-				<Icon name="mdi:linkedin" size="2rem" />
-			</a>
+			<SocialButton icon="mdi:github" url="https://github.com/SpaceShaman" />
+			<SocialButton
+				icon="mdi:linkedin"
+				url="https://www.linkedin.com/in/krzysztof-stanislawski/"
+			/>
 		</div>
 		<div class="justify-center">
 			<h2 class="mt-2">
