@@ -2,5 +2,7 @@
 	const aboutMe = await getAboutMe()
 </script>
 <template>
-	<MDC :value="aboutMe" />
+	<Card title="About Me">
+		<MDC :value="aboutMe" />
+	</Card>
 </template>
