@@ -2,14 +2,14 @@
 	import projects from '../public/projects.json'
 </script>
 <template>
-	<div v-for="(project, index) in projects" :key="index">
-		<h2>
-			<a :href="project.url" target="_blank">
-				{{ project.name }}
-			</a>
-		</h2>
-		<p v-if="project.description">{{ project.description }}</p>
-		<div class="mt-1 flex">
+	<CardItem
+		v-for="(project, index) in projects"
+		:key="index"
+		:title="project.name"
+		:url="project.url"
+		:description="project.description"
+	>
+		<div class="flex">
 			<a target="_blank" class="mr-4 flex items-center gap-2 text-base-content">
 				<Icon
 					:name="`mdi:language-${project.language.toLowerCase()}`"
@@ -36,5 +36,5 @@
 				<span>{{ project.forks }}</span>
 			</a>
 		</div>
-	</div>
+	</CardItem>
 </template>
