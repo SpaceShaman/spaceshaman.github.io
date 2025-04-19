@@ -16,8 +16,8 @@
 	<div>
 		<div class="mx-auto max-w-7xl p-4 print:p-2">
 			<div class="flex space-x-4 print:space-x-2">
-				<LeftSection class="basis-1/3 print:basis-2/5" />
-				<RightSection class="basis-2/3 print:basis-3/5" />
+				<LeftSection class="print:basis-3/10 basis-1/3" />
+				<RightSection class="print:basis-7/10 basis-2/3" />
 			</div>
 		</div>
 	</div>
@@ -36,6 +36,20 @@
 		@apply text-2xl font-bold;
 	}
 	h2 {
-		@apply text-lg font-bold text-accent;
+		@apply text-xl font-bold text-accent;
+	}
+	h3 {
+		@apply text-sm font-bold text-gray-600 dark:text-gray-300;
+	}
+	@media print {
+		h1 {
+			@apply text-xl font-bold;
+		}
+		h2 {
+			@apply text-lg font-bold;
+		}
+		h3 {
+			@apply text-xs font-bold;
+		}
 	}
 </style>

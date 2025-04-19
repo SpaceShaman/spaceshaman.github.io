@@ -8,12 +8,12 @@
 </script>
 <template>
 	<div>
-		<a :href="url" target="_blank" class="text-lg font-bold text-accent">
-			{{ title }}
+		<a :href="url" target="_blank">
+			<h2>{{ title }}</h2>
 		</a>
-		<p v-if="subtitle" class="text-sm text-gray-600 dark:text-gray-300">
+		<h3 v-if="subtitle">
 			{{ subtitle }}
-		</p>
+		</h3>
 		<p class="mt-1">{{ description }}</p>
 		<slot />
 	</div>
