@@ -51,11 +51,11 @@ function extractPinnedProjects(html: string): Project[] {
 async function main() {
 	const projects = await getProjects()
 	await writeFile(
-		'./src/public/projects.json',
+		'./src/data/projects.json',
 		JSON.stringify(projects, null, 2),
 		'utf-8'
 	)
-	console.log('Projects saved to public/projects.json')
+	console.log('Projects saved to data/projects.json')
 }
 
 main()
