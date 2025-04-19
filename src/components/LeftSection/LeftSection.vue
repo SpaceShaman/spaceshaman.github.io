@@ -11,7 +11,7 @@
 			I'm a fullstack developer with a passion for creating advanced web
 			applications.
 		</div>
-		<Skills />
+		<LeftSectionSkills />
 		<div class="mt-4 flex justify-center gap-4 text-accent">
 			<a href="https://github.com/SpaceShaman" target="_blank">
 				<Icon name="mdi:github" size="2rem" />
