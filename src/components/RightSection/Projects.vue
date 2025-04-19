@@ -13,9 +13,15 @@
 			<div class="mt-1 flex">
 				<a
 					target="_blank"
-					class="mr-4 flex items-center gap-2 text-base-content"
+					class="mr-4 flex items-center gap-2 text-base-content text-gray-600 dark:text-gray-300"
 				>
 					<Icon
+						v-if="project.language == 'Vue'"
+						name="mdi:vuejs"
+						size="1.5rem"
+					/>
+					<Icon
+						v-else
 						:name="`mdi:language-${project.language.toLowerCase()}`"
 						size="1.5rem"
 					/>

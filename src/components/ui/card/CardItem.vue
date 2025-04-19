@@ -8,9 +8,11 @@
 </script>
 <template>
 	<div>
-		<a :href="url" target="_blank">
-			<h2>{{ title }}</h2>
-		</a>
+		<h2>
+			<a :href="url" target="_blank">
+				{{ title }}
+			</a>
+		</h2>
 		<h3 v-if="subtitle">
 			{{ subtitle }}
 		</h3>
