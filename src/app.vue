@@ -19,7 +19,9 @@
 				<LeftSection class="print:basis-3/10 basis-1/3" />
 				<RightSection class="print:basis-7/10 basis-2/3" />
 			</div>
-			<p class="mt-2 text-center text-xs text-gray-600 dark:text-gray-300">
+			<p
+				class="mt-4 text-center text-xs text-gray-600 dark:text-gray-300 print:mt-1"
+			>
 				I consent to the processing of my personal data for recruitment purposes
 				in accordance with the GDPR.
 			</p>
