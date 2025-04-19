@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import projects from '../data/projects.json'
+	import projects from '~/data/projects.json'
 </script>
 <template>
 	<Card title="Open Source Projects">

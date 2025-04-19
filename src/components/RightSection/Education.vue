@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import educations from '../data/educations.json'
+	import educations from '~/data/educations.json'
 </script>
 <template>
 	<Card title="Education">
