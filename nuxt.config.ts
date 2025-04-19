@@ -15,4 +15,13 @@ export default defineNuxtConfig({
 		fallback: 'dark',
 		dataValue: 'theme',
 	},
+	components: [
+		{
+			path: '~/components',
+		},
+		{
+			path: '~/components/ui',
+			pathPrefix: false,
+		},
+	],
 })
