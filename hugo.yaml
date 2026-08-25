@@ -1,0 +1,94 @@
+baseURL: https://spaceshaman.github.io/
+title: SpaceShaman
+copyright: "© SpaceShaman"
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+enableRobotsTXT: true
+hasCJKLanguage: false
+
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
+
+languages:
+  en:
+    locale: en-US
+    label: English
+    contentDir: content/en
+    weight: 1
+    menu:
+      main:
+        - name: Posts
+          pageRef: /posts
+          weight: 10
+        - name: About
+          pageRef: /about
+          weight: 20
+        - name: Archive
+          pageRef: /archives
+          weight: 30
+    params:
+      description: Software developer building focused tools, libraries and experiments across languages and platforms.
+      homeInfoParams:
+        title: Hello, Earthlings 🧑‍🚀
+        content: Software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
+  pl:
+    locale: pl-PL
+    label: Polski
+    contentDir: content/pl
+    weight: 2
+    menu:
+      main:
+        - name: Artykuły
+          pageRef: /posts
+          weight: 10
+        - name: O mnie
+          pageRef: /about
+          weight: 20
+        - name: Archiwum
+          pageRef: /archives
+          weight: 30
+    params:
+      description: Programista tworzący konkretne narzędzia, biblioteki i eksperymenty w wielu językach i na różnych platformach.
+      homeInfoParams:
+        title: Witajcie, Ziemianie 🧑‍🚀
+        content: Programista i twórca projektów open source. Buduję narzędzia dla deweloperów oraz eksperymentuję z różnymi językami i technologiami.
+
+params:
+  author: SpaceShaman
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowFullTextinRSS: true
+  displayFullLangName: true
+  socialIcons:
+    - name: github
+      url: https://github.com/SpaceShaman
+    - name: linkedin
+      url: https://www.linkedin.com/in/krzysztof-stanislawski/
+    - name: coderlegion
+      title: CoderLegion
+      url: https://coderlegion.com/user/SpaceShaman
+    - name: email
+      url: mailto:spaceshaman@tuta.io
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+markup:
+  highlight:
+    noClasses: false
+
+minify:
+  disableXML: true
