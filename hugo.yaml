@@ -28,7 +28,7 @@ languages:
           pageRef: /archives
           weight: 30
     params:
-      description: Software developer building focused tools, libraries and experiments across languages and platforms.
+      description: Software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
       homeInfoParams:
         title: Hello, Earthlings 🧑‍🚀
         content: Software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
@@ -49,7 +49,7 @@ languages:
           pageRef: /archives
           weight: 30
     params:
-      description: Programista tworzący konkretne narzędzia, biblioteki i eksperymenty w wielu językach i na różnych platformach.
+      description: Programista i twórca projektów open source. Buduję narzędzia dla deweloperów oraz eksperymentuję z różnymi językami i technologiami.
       homeInfoParams:
         title: Witajcie, Ziemianie 🧑‍🚀
         content: Programista i twórca projektów open source. Buduję narzędzia dla deweloperów oraz eksperymentuję z różnymi językami i technologiami.
