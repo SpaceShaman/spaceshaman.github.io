@@ -1,9 +1,9 @@
 ---
-title: "Budowa UserHarbor: niezależne od frameworka zarządzanie użytkownikami w Pythonie"
+title: "Rozwój UserHarbor: od niezależnego rdzenia do wykonywalnych kontraktów warstwy danych"
 date: 2026-08-17T12:31:04Z
 author: SpaceShaman
-description: Architektura UserHarbor — niezależny od frameworka rdzeń, adaptery i wykonywalny kontrakt warstwy danych.
-tags: [python, architektura, uwierzytelnianie, open source]
+description: Jak UserHarbor rozwinął się od niezależnego rdzenia w architekturę opartą na adapterach i wykonywalnym kontrakcie warstwy danych.
+tags: [python, userharbor, architektura, uwierzytelnianie, open source]
 translationKey: building-userharbor
 showToc: true
 ---
@@ -19,6 +19,8 @@ Właśnie ten problem skłonił mnie do zbudowania **UserHarbor**.
 UserHarbor to niezależna od frameworka biblioteka Pythona do zarządzania kontami użytkowników. Jej celem nie jest stworzenie kolejnego frameworka webowego ani kompletnej platformy tożsamości. Zamiast tego udostępnia niewielkie API na poziomie domeny dla typowych operacji na kontach, pozostawiając obsługę HTTP, baz danych i wysyłkę wiadomości e-mail osobnym integracjom.
 
 Odkąd po raz pierwszy napisałem o tym projekcie, coraz ciekawsza staje się dla mnie nie tylko sama warstwa uwierzytelniania, lecz przede wszystkim granica pomiędzy rdzeniem a jego integracjami.
+
+_Ten artykuł rozwija [moje pierwotne wprowadzenie do UserHarbor]({{< relref "i-built-userharbor-a-framework-agnostic-user-management-library-for-python.md" >}}) i skupia się na tym, jak zmieniała się architektura wraz z rozwojem projektu._
 
 ## Problem, który chciałem rozwiązać
 

@@ -1,9 +1,9 @@
 ---
-title: "Building UserHarbor: Framework-Agnostic User Management for Python"
+title: "Evolving UserHarbor: From a Framework-Agnostic Core to Executable Storage Contracts"
 date: 2026-08-17T12:31:04Z
 author: SpaceShaman
-description: The architecture behind UserHarbor and its framework-independent core, adapters and executable storage contract.
-tags: [python, architecture, authentication, open source]
+description: How UserHarbor evolved from a framework-independent core into an architecture backed by adapters and an executable storage contract.
+tags: [python, userharbor, architecture, authentication, open source]
 translationKey: building-userharbor
 canonicalURL: https://coderlegion.com/24763/building-userharbor-framework-agnostic-user-management-for-python
 showToc: true
@@ -20,6 +20,8 @@ That was the problem that led me to build **UserHarbor**.
 UserHarbor is a framework-agnostic Python library for user account management. The goal is not to build another web framework or a complete identity platform. Instead, it provides a small domain-level API for common account operations while leaving HTTP, databases and email delivery to separate integrations.
 
 Since I first wrote about the project, the interesting part has increasingly become not just the authentication API itself, but the boundary between the core and its integrations.
+
+_This article expands on [my original introduction to UserHarbor]({{< relref "i-built-userharbor-a-framework-agnostic-user-management-library-for-python.md" >}}), focusing on how the architecture evolved as the project grew._
 
 ## The problem I wanted to solve
 
