@@ -28,10 +28,10 @@ languages:
           pageRef: /archives
           weight: 30
     params:
-      description: Software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
+      description: I'm a software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
       homeInfoParams:
         title: Hello, Earthlings 🧑‍🚀
-        content: Software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
+        content: I'm a software developer and open-source creator. I build tools for developers and experiment with different languages and technologies.
   pl:
     locale: pl-PL
     label: Polski
@@ -49,10 +49,10 @@ languages:
           pageRef: /archives
           weight: 30
     params:
-      description: Programista i twórca projektów open source. Buduję narzędzia dla deweloperów oraz eksperymentuję z różnymi językami i technologiami.
+      description: Jestem programistą i twórcą projektów open source. Buduję narzędzia dla programistów oraz eksperymentuję z różnymi językami i technologiami.
       homeInfoParams:
         title: Witajcie, Ziemianie 🧑‍🚀
-        content: Programista i twórca projektów open source. Buduję narzędzia dla deweloperów oraz eksperymentuję z różnymi językami i technologiami.
+        content: Jestem programistą i twórcą projektów open source. Buduję narzędzia dla programistów oraz eksperymentuję z różnymi językami i technologiami.
 
 params:
   author: SpaceShaman
