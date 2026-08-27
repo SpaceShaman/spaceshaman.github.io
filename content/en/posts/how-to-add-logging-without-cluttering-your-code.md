@@ -331,3 +331,5 @@ I chose not to append every argument automatically. A list of costs, attachments
 Ultimately, a small abstraction allowed me to retain detailed, consistent logs without letting them obscure the program's actual logic. It does not solve every logging problem, but it has worked very well in code that integrates numerous external services.
 
 What does logging look like in your projects? Do you prefer explicit logger calls, decorators, or another solution? Where do you draw the line between useful context and too much information in your logs?
+
+_You can also read this article on [CoderLegion](https://coderlegion.com/25521/how-to-add-logging-without-cluttering-your-code)._

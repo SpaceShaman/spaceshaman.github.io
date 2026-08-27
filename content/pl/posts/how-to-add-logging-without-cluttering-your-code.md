@@ -331,3 +331,5 @@ Nie zdecydowałem się na automatyczne dopisywanie wszystkich argumentów. Lista
 Ostatecznie niewielka abstrakcja pozwoliła mi zachować szczegółowe i spójne logi bez zasłaniania nimi właściwej logiki programu. Nie rozwiązuje to każdego problemu związanego z logowaniem, ale w kodzie integrującym wiele zewnętrznych usług sprawdziło się bardzo dobrze.
 
 A jak wygląda logowanie w Twoich projektach? Wolisz jawne wywołania loggera, dekoratory czy inne rozwiązania? Gdzie stawiasz granicę między przydatnym kontekstem a nadmiarem informacji w logach?
+
+_Artykuł możesz również przeczytać po angielsku na [CoderLegion](https://coderlegion.com/25521/how-to-add-logging-without-cluttering-your-code)._
