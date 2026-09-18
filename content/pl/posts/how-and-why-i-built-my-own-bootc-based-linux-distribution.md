@@ -48,7 +48,7 @@ p4  SpaceOS /boot          ext4
 p5  SpaceOS /boot/efi      FAT32
 ```
 
-Najpierw zrobiłem miejsce na końcu dysku. W moim przypadku oznaczało to zmniejszenie istniejącego systemu plików i woluminu Debiana, a następnie partycji LUKS. Tę część trzeba dopasować do własnego układu: kolejność ma znaczenie i nie warto przepisywać cudzych sektorów z internetu, nawet jeśli należą do bardzo sympatycznego autora bloga. Przed zmianami sprawdziłem `lsblk`, `pvs`, `vgs`, `lvs` i tablicę GPT, a po każdej operacji upewniałem się, że Debian nadal uruchamia się poprawnie.
+Najpierw zrobiłem miejsce na końcu dysku. Uruchomiłem komputer z pendrive'a z SystemRescue, żeby nie zmniejszać systemu plików, z którego właśnie działa Debian. Po odblokowaniu LUKS-a i aktywowaniu LVM sprawdziłem niezamontowany system plików Debiana i zmniejszyłem go, a dopiero potem dopasowałem rozmiary LVM i partycji LUKS. Tę część trzeba dopasować do własnego układu: kolejność ma znaczenie i nie warto przepisywać cudzych sektorów z internetu, nawet jeśli należą do bardzo sympatycznego autora bloga. Przed zmianami sprawdziłem `lsblk`, `pvs`, `vgs`, `lvs` i tablicę GPT, a po każdej operacji upewniałem się, że Debian nadal uruchamia się poprawnie.
 
 Z wydzielonego miejsca utworzyłem dwie małe partycje poza LUKS-em: około 1 GiB na `/boot` i około 1 GiB na EFI SpaceOS-a. Pozostałą przestrzeń dołączyłem z powrotem do partycji LUKS, powiększyłem znajdujący się w niej fizyczny wolumin LVM przez `pvresize` i stworzyłem nowy wolumin logiczny `spaceos`. Wyszło około 58 GiB na system. Ten wolumin oraz `/boot` sformatowałem jako `ext4`, a partycję EFI jako FAT32. W ten sposób katalog główny SpaceOS-a jest zaszyfrowany razem z Debianem, za to oba systemy mają niezależne pliki rozruchowe.
 
