@@ -1,6 +1,6 @@
 ---
 title: Jak i dlaczego zbudowałem własną dystrybucję Linuxa opartą o bootc
-date: 2026-09-20T18:00:00Z
+date: 2026-09-20T16:00:00Z
 author: SpaceShaman
 description: Jak zbudowałem SpaceOS na bazie Fedory i bootc oraz zainstalowałem go obok Debiana na zaszyfrowanym dysku.
 tags: [linux, bootc, fedora, spaceos, displaylink]
