@@ -13,7 +13,7 @@ User management is one of those problems that rarely feels difficult enough to d
 
 Until you implement it for the fifth time.
 
-Registration, login, sessions, email verification, password resets, password changes, account deletion, roles, permissions — none of these features are particularly unusual. But almost every application needs some combination of them, and the implementation often ends up tightly coupled to whatever framework, ORM, or infrastructure the project happened to use at the time.
+Registration, login, sessions, email verification, password resets, password changes, account deletion, roles, and permissions are not particularly unusual features. But almost every application needs some combination of them, and the implementation often ends up tightly coupled to whatever framework, ORM, or infrastructure the project happened to use at the time.
 
 That was the problem that led me to build **UserHarbor**.
 
@@ -283,7 +283,7 @@ Another important architectural boundary is that storage adapters never receive 
 
 UserHarbor generates the raw verification, reset and session tokens, but hashes them before passing them to `UserStore`.
 
-The raw token is given only to the part of the application that needs it — for example, to an email sender or to the user after login.
+The raw token is given only to the part of the application that needs it, such as an email sender or the user after login.
 
 The database stores the hash.
 
@@ -379,7 +379,7 @@ The areas I am particularly interested in getting feedback on are:
 - the FastAPI integration
 - custom storage backends
 - the shape of the public API
-- what should — and should not — belong in the core
+- what should and should not belong in the core
 
 There are plenty of good framework-specific authentication libraries in Python.
 

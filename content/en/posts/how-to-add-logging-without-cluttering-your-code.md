@@ -125,7 +125,7 @@ This way, I still get an entry for the start, completion, or failure of every st
 
 There is admittedly a little less code, but the result still does not look ideal. In more complex processes, successive `with` blocks introduce many additional levels of indentation, which can be cumbersome and significantly reduce readability.
 
-At this point, I decided to use decorators for logging and apply them to methods of classes responsible for communicating with external services. The decorator did not need to implement the entire mechanism again—it only needed to execute the function inside the context manager I had already prepared:
+At this point, I decided to use decorators for logging and apply them to methods of classes responsible for communicating with external services. The decorator did not need to implement the entire mechanism again. It only needed to execute the function inside the context manager I had already prepared:
 
 ```python
 from functools import wraps
@@ -216,7 +216,7 @@ def export_order(
     orders.set_status(order_id, "exported")
 ```
 
-Logging now lives at the boundary where the application communicates with external systems, while the function describing the process once again focuses on its logic. Every call to a decorated method still generates an entry for its start, completion, or failure—regardless of how many automations use a given client.
+Logging now lives at the boundary where the application communicates with external systems, while the function describing the process once again focuses on its logic. Every call to a decorated method still generates an entry for its start, completion, or failure, regardless of how many automations use a given client.
 
 This solution has an important limitation, however: the message passed to the decorator is static. Every order therefore produces exactly the same `Getting order` entry. While defining the class, I cannot use `f"Getting order {order_id}"` because the value of `order_id` does not exist until the method is called.
 
@@ -326,7 +326,7 @@ Starting: Creating invoice for order 123 with a 14-day payment term
 Finished: Creating invoice for order 123 with a 14-day payment term
 ```
 
-I chose not to append every argument automatically. A list of costs, attachments, or the entire order object could generate enormous entries and, worse, expose personal data, tokens, or passwords. The template forces a deliberate choice of the information needed to diagnose a problem—usually an order identifier, the operation name, and the new status. It is also important to remember that a typo in a template field name raises a `KeyError`, so decorators like this should be covered by tests.
+I chose not to append every argument automatically. A list of costs, attachments, or the entire order object could generate enormous entries and, worse, expose personal data, tokens, or passwords. The template forces a deliberate choice of the information needed to diagnose a problem, usually an order identifier, the operation name, and the new status. It is also important to remember that a typo in a template field name raises a `KeyError`, so decorators like this should be covered by tests.
 
 Ultimately, a small abstraction allowed me to retain detailed, consistent logs without letting them obscure the program's actual logic. It does not solve every logging problem, but it has worked very well in code that integrates numerous external services.
 

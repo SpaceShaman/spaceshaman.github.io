@@ -37,7 +37,7 @@ After the first month, the pain in my knees and back disappeared, and I started 
 
 ## Two Years Later, I Still Work on the Floor
 
-It has now been two years since I started this experiment, and I have no intention of going back to sitting in an office chair. I feel much better than I did before, my posture has improved significantly, and I can no longer imagine spending many hours sitting in a comfortable office chair—which, ironically, no longer feels comfortable to me at all.
+It has now been two years since I started this experiment, and I have no intention of going back to sitting in an office chair. I feel much better than I did before, my posture has improved significantly, and I can no longer imagine spending many hours sitting in a comfortable office chair. Ironically, it no longer feels comfortable to me at all.
 
 I have also discovered that sitting on the floor allows us to use many different positions, which can also have a positive effect on the body. Spending the entire day in a single position is very unhealthy.
 
