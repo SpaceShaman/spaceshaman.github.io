@@ -142,3 +142,24 @@ Finalnie podpatrzyłem sposób używania `akmods` w [Universal Blue](https://git
 Pakiety biorę z repozytorium [Fedora Multimedia prowadzonego przez Negativo17](https://negativo17.org/), czyli Simone Caronniego. Jeśli używasz Fedory i kiedykolwiek potrzebowałeś czegoś spoza jej podstawowych repozytoriów, mogłeś już trafić na jego pracę. W moim przypadku udostępniane tam pakiety `displaylink`, `libevdi` i `akmod-evdi` oszczędziły mi jeszcze większej ilości ręcznej dłubaniny. Mały ukłon w jego stronę, bo bez takich ludzi nasze „to tylko jeden sterownik” bywałoby znacznie mniej zabawne.
 
 Obecny `Containerfile` buduje EVDI w osobnym etapie i instaluje go w obrazie SpaceOS-a. Musiałem jeszcze zmienić polecenie uruchamiające Swaya w `greetd`, dodając flagę `--unsupported-gpu`. Przetestowałem ten obraz na fizycznym komputerze i tym razem DisplayLink działa ze stacją dokującą, a Sway nie wyrzuca mnie z powrotem do `greetd`. W końcu 😄
+
+## Aktualizacje zarządzane przez CI/CD
+
+Kiedy system zaczął już nadawać się do codziennego używania, lokalne budowanie obrazów przestało mi wystarczać. Jest wygodne podczas pracy nad konfiguracją, ale trudno nazwać je sensownym sposobem publikowania kolejnych wersji systemu. Nie chciałem też pamiętać o ręcznym przebudowywaniu SpaceOS-a za każdym razem, gdy Fedora zaktualizuje obraz bazowy. Przyszedł więc czas na GitHub Actions i GHCR.
+
+Oficjalne wydanie zaczyna się teraz od utworzenia tagu zgodnego ze schematem `v0.1.3`. Workflow sprawdza jego format, buduje obraz SpaceOS-a, generuje dla niego `/etc/os-release` z właściwym numerem wersji i publikuje całość w GitHub Container Registry. Niezmienny tag wersji zostaje w rejestrze na stałe, a znaczniki `stable`, `latest` i `auto` są przesuwane na właśnie wydany obraz. Dzięki temu ktoś śledzący kanał `auto` dostaje nie tylko poprawki z Fedory, ale również nowe wydanie SpaceOS-a.
+
+Ten sam tag uruchamia budowanie instalacyjnego ISO z Anacondą. Gotowy obraz wraz z sumą SHA-256 trafia do nowego GitHub Release. System zainstalowany z tego ISO od początku śledzi tag `auto`, więc po instalacji nie trzeba ręcznie przełączać go na kanał aktualizacji. ISO powstaje wyłącznie dla właściwych wydań. Nie ma sensu produkować kolejnego instalatora tylko dlatego, że w bazowym obrazie Fedory zmieniło się kilka pakietów.
+
+Drugi workflow zajmuje się właśnie takimi zmianami. Raz w tygodniu sprawdza digest obrazu `fedora-bootc:44` i porównuje go z bazą ostatnio opublikowanego SpaceOS-a. Jeżeli Fedora niczego nie zmieniła, akcja kończy pracę bez budowania czegokolwiek. Jeśli digest jest nowy, workflow pobiera kod najnowszego wydania, przebudowuje obraz i publikuje go pod tagiem zawierającym wersję SpaceOS-a, datę oraz fragment digestu bazy, na przykład `auto-v0.1.3-20260920-abcdef123456`. Tag `auto` zostaje przesunięty na ten obraz, a w rejestrze zachowuję pięć najnowszych automatycznych przebudowań. Obrazy oznaczone tagami wydań nie podlegają temu sprzątaniu.
+
+Pozostało pytanie, co zrobić po stronie działającego systemu. Domyślny mechanizm automatycznych aktualizacji bootc nie pasował do mojego sposobu pracy, ponieważ nie chcę, żeby komputer sam postanowił uruchomić się ponownie w najmniej odpowiednim momencie. Zamiast niego dodałem własny timer systemd. Co godzinę sprawdza on kanał aktualizacji, a jeżeli połączenie nie jest taryfowe, poziom baterii nie jest zbyt niski i komputer nie jest mocno obciążony, pobiera oraz przygotowuje nowe wdrożenie w tle. Nie wykonuje restartu. Waybar informuje mnie, że aktualizacja czeka, a nowa wersja zostaje uruchomiona dopiero przy następnym restarcie wykonanym przeze mnie.
+
+## Podsumowanie
+
+SpaceOS zaczął się od frustracji związanej z kolejnym podejściem do NixOS-a, a skończył jako system, którego cały przepis mogę trzymać w Gitcie, testować jak obraz kontenera i aktualizować bez ręcznego odtwarzania środowiska. Po drodze musiałem się zmierzyć z wieloma problemami, ale finalnie udało się.
+. Ostatecznie właśnie dzięki tym problemom znacznie lepiej zrozumiałem bootc, OSTree,proces budowania własnego systemu i wiele innych zagadnień związanych z Linuksem.
+
+Kod projektu znajduje się w repozytorium [SpaceOS na GitHubie](https://github.com/SpaceShaman/spaceos). W jego README dokładniej opisałem sam system, instalację, publikowane tagi, sposób aktualizowania, dołączone programy oraz skróty klawiszowe.
+
+Muszę przy tym zaznaczyć, że SpaceOS jest systemem przygotowanym specjalnie pode mnie, mój sprzęt i mój sposób pracy. Raczej nie polecam instalowania go bezpośrednio jako własnego systemu. Zachęcam za to do sforkowania repozytorium i potraktowania go jako punktu startowego do zbudowania swojej własnej, niepowtarzalnej dystrybucji. W końcu największą zaletą takiego podejścia jest właśnie to, że system może być naprawdę twój.
