@@ -168,7 +168,11 @@ Pliku nie usuwam. Jego istnienie nie oznacza zajętej blokady — decyduje o tym
 
 ## Gdzie są granice tego rozwiązania
 
+Dekorator jest przygotowany na wyjątki, ale nie na utknięcie funkcji na zawsze. Jeśli połączenie sieciowe do zewnętrznego systemu zawiesi się bez limitu czasu, kod nie dotrze do `finally`, a proces nadal będzie trzymał blokadę. Kolejne wywołania w trybie `wait` lub `skip` z opóźnieniem też mogą wtedy czekać w nieskończoność. Dlatego limity czasu dla takich operacji trzeba ustawić osobno — dekorator pilnuje drzwi, ale nie wyciągnie nikogo z zawieszonej rozmowy telefonicznej.
+
 Procesy muszą widzieć ten sam plik blokady. Osobne katalogi tymczasowe w kontenerach czy inne lokalizacje kodu mogą oznaczać osobne locki. To rozwiązanie do współpracy procesów we wspólnym środowisku, nie gotowa blokada rozproszona.
+
+Podobna pułapka czeka w systemd: usługa z [`PrivateTmp=yes`](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#PrivateTmp=) dostaje własne `/tmp` i `/var/tmp`. Dwie usługi na tym samym hoście, każda z prywatnym `/tmp`, domyślnie utworzą więc różne pliki blokady, nawet jeśli ścieżka w kodzie wygląda identycznie. Każda grzecznie pilnuje swoich drzwi, tylko że to dwa różne wejścia. Jeśli mają się wzajemnie blokować, trzeba zapewnić im wspólny katalog blokad i odpowiednio zmienić `lock_path` albo świadomie współdzielić prywatne katalogi tymczasowe przez `JoinsNamespaceOf=`.
 
 Wszystkie konkurujące wywołania powinny też korzystać z dekoratora. Blokada ma charakter umowny: kod, który ją ignoruje, nadal może zmodyfikować wspólny zasób. [`flock`](https://man7.org/linux/man-pages/man2/flock.2.html) nie przypilnuje za nas całej aplikacji.
 

@@ -168,7 +168,11 @@ I don't delete the file. Its existence doesn't mean the lock is held — that's 
 
 ## The Limits of This Approach
 
+The decorator handles exceptions, but it isn't prepared for a function getting stuck forever. If a network connection to an external system hangs without a timeout, the code won't reach `finally`, and the process will keep holding the lock. Subsequent calls in `wait` mode or `skip` mode with a delay can then wait forever too. That's why timeouts for these operations need to be configured separately — the decorator guards the door, but it won't rescue anyone from a never-ending phone call.
+
 The processes must see the same lock file. Separate temporary directories in containers or different code locations can mean separate locks. This is a solution for coordinating processes in a shared environment, rather than a ready-made distributed lock.
+
+A similar trap awaits in systemd: a service with [`PrivateTmp=yes`](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#PrivateTmp=) gets its own `/tmp` and `/var/tmp`. Two services on the same host, each with a private `/tmp`, will therefore create different lock files by default, even if the path in the code looks identical. Each politely guards its own door, but those are two different entrances. If they need to block each other, give them a shared lock directory and adjust `lock_path` accordingly, or deliberately share their private temporary directories through `JoinsNamespaceOf=`.
 
 All competing calls should also use the decorator. The lock is advisory: code that ignores it can still modify the shared resource. [`flock`](https://man7.org/linux/man-pages/man2/flock.2.html) won't keep the entire application in check for us.
 
