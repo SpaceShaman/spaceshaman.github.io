@@ -334,7 +334,7 @@ Right now I am mostly looking for feedback around:
 ## Links
 
 Documentation:  
-<https://userharbor.github.io/userharbor/>
+<https://userharbor.github.io/>
 
 Repository:  
 <https://github.com/userharbor/userharbor>

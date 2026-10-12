@@ -333,7 +333,7 @@ W tej chwili zależy mi przede wszystkim na opiniach dotyczących:
 ## Linki
 
 Dokumentacja:  
-<https://userharbor.github.io/userharbor/>
+<https://userharbor.github.io/>
 
 Repozytorium:  
 <https://github.com/userharbor/userharbor>

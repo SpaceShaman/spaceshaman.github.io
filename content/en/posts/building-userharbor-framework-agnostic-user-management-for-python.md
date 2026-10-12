@@ -392,7 +392,7 @@ So far, I think that boundary is turning out to be the most interesting part of 
 ## Links
 
 Documentation:  
-<https://userharbor.github.io/userharbor/>
+<https://userharbor.github.io/>
 
 Repository:  
 <https://github.com/userharbor/userharbor>
