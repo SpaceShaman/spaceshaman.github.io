@@ -13,6 +13,7 @@ In both work and life, I try to follow the principle: **Simple is better than co
 
 - [SpaceOS](https://github.com/SpaceShaman/spaceos) — a personal Linux distribution built on Fedora bootc, with an image-based system that can be reproduced and updated like a container.
 - [UserHarbor](https://github.com/userharbor/userharbor) — a framework-agnostic user management system for Python applications.
+- [fasthtml-lucide](https://github.com/SpaceShaman/fasthtml-lucide) — bundled Lucide SVG icons for FastHTML, with typed icon names for autocomplete and automatic updates following upstream releases.
 - [SocketAPI](https://github.com/SpaceShaman/socketapi) — a lightweight real-time API framework using one multiplexed WebSocket connection with endpoint-like actions and subscriptions.
 - [SQLift](https://github.com/SpaceShaman/SQLift) — a deliberately small command-line migration tool for SQL databases.
 - [ORMagic](https://github.com/SpaceShaman/ORMagic) — a simple and lightweight ORM for Python, built on top of Pydantic.

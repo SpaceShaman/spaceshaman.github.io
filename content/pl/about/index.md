@@ -13,6 +13,7 @@ W pracy i w życiu staram się kierować zasadą: **Simple is better than comple
 
 - [SpaceOS](https://github.com/SpaceShaman/spaceos) — osobista dystrybucja Linuksa zbudowana na bazie Fedora bootc, z systemem opartym na obrazach, który można odtwarzać i aktualizować jak kontener.
 - [UserHarbor](https://github.com/userharbor/userharbor) — system zarządzania kontami użytkowników w aplikacjach Python, działający niezależnie od używanego frameworka.
+- [fasthtml-lucide](https://github.com/SpaceShaman/fasthtml-lucide) — biblioteka ikon SVG Lucide dla FastHTML, z typowanymi nazwami ikon wspierającymi autouzupełnianie i automatycznymi aktualizacjami zgodnymi z wydaniami Lucide.
 - [SocketAPI](https://github.com/SpaceShaman/socketapi) — lekki framework API czasu rzeczywistego wykorzystujący jedno multipleksowane połączenie WebSocket, akcje podobne do endpointów i subskrypcje.
 - [SQLift](https://github.com/SpaceShaman/SQLift) — celowo niewielkie narzędzie wiersza poleceń do migracji baz SQL.
 - [ORMagic](https://github.com/SpaceShaman/ORMagic) — prosty i lekki ORM dla Pythona, zbudowany na bazie Pydantica.
