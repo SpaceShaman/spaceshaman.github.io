@@ -14,6 +14,7 @@ W pracy i w życiu staram się kierować zasadą: **Simple is better than comple
 - [UserHarbor](https://github.com/userharbor/userharbor) — system zarządzania kontami użytkowników w aplikacjach Python, działający niezależnie od używanego frameworka.
 - [SpaceOS](https://github.com/SpaceShaman/spaceos) — osobista dystrybucja Linuksa zbudowana na bazie Fedora bootc, z systemem opartym na obrazach, który można odtwarzać i aktualizować jak kontener.
 - [fasthtml-tailwindcss](https://github.com/SpaceShaman/fasthtml-tailwindcss) — integracja Tailwind CSS z FastHTML, z dołączonym samodzielnym kompilatorem i trybem obserwowania zmian działającym także podczas przeładowań serwera.
+- [fasthtml-basecoatui](https://github.com/SpaceShaman/fasthtml-basecoatui) — Komponenty BasecoatUI dla FastHTML
 - [fasthtml-lucide](https://github.com/SpaceShaman/fasthtml-lucide) — biblioteka ikon SVG Lucide dla FastHTML, z typowanymi nazwami ikon wspierającymi autouzupełnianie i automatycznymi aktualizacjami zgodnymi z wydaniami Lucide.
 - [SocketAPI](https://github.com/SpaceShaman/socketapi) — lekki framework API czasu rzeczywistego wykorzystujący jedno multipleksowane połączenie WebSocket, akcje podobne do endpointów i subskrypcje.
 - [ORMagic](https://github.com/SpaceShaman/ORMagic) — prosty i lekki ORM dla Pythona, zbudowany na bazie Pydantica.
